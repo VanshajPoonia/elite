@@ -224,7 +224,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section id="home" className="h-auto relative overflow-hidden">
+      <section id="home" className="h-auto relative overflow-hidden pt-2 lg:pt-4">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-20 w-32 h-32 border-2 border-primary rotate-45 animate-spin-slow"></div>
           <div className="absolute bottom-40 right-32 w-24 h-24 border-2 border-primary rotate-12 animate-pulse"></div>
@@ -232,10 +232,11 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 h-auto relative z-10">
-          <div className="bg-black flex items-center relative order-2 lg:order-1 lg:col-span-3">
-            <div className="px-4 sm:px-8 lg:px-12 py-8 sm:py-12 w-full">
+          {/* Text section - 60% width (3 columns) */}
+          <div className="bg-black flex items-start relative order-2 lg:order-1 lg:col-span-3 px-4 sm:px-8 lg:px-12 py-4 lg:py-6">
+            <div className="w-full">
               <div className={`${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-                <div className="mb-6 sm:mb-8 mt-4">
+                <div className="mb-6 sm:mb-8">
                   <div className="text-primary text-xs sm:text-sm font-bold tracking-widest mb-1 animate-fade-in">
                     ⚡ EMERGENCY TOWING SERVICES
                   </div>
@@ -303,20 +304,21 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="relative order-1 lg:order-2 lg:col-span-2 h-auto min-h-[60vh] lg:min-h-[700px] flex items-center justify-center">
-              <div className="absolute left-4 top-0 h-full w-1 bg-gradient-to-b from-primary via-primary/50 to-primary animate-pulse"></div>
-              <div className="w-full h-full flex items-center justify-center bg-black pl-2">
-                <Image
-                  src="/images/welcome-elite.jpeg"
-                  alt="Welcome to Elite Towing - Professional towing services"
-                  width={1200}
-                  height={1600}
-                  className="w-full h-auto max-h-[95vh] lg:max-h-[900px] object-contain"
-                  priority
-                />
-              </div>
-            </div>
+          <div className="relative order-1 lg:order-2 lg:col-span-2 min-h-[60vh] lg:min-h-[700px] bg-black">
+            {/* Vertical bar at the left edge of image container */}
+            <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary via-primary/50 to-primary animate-pulse z-10"></div>
+
+            {/* Image fills entire container */}
+            <Image
+              src="/images/welcome-elite.jpeg"
+              alt="Welcome to Elite Towing - Professional towing services"
+              width={1200}
+              height={1600}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
