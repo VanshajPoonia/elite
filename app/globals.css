@@ -4,27 +4,27 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens to match SNS Towing design brief */
+  /* Updated color tokens from red to silver and grey */
   --background: oklch(0.1 0 0); /* #1a1a1a - dark background */
   --foreground: oklch(1 0 0); /* #ffffff - white text */
   --card: oklch(0.15 0 0); /* #262626 - dark card background */
   --card-foreground: oklch(1 0 0); /* #ffffff */
   --popover: oklch(0.1 0 0); /* #1a1a1a */
   --popover-foreground: oklch(1 0 0); /* #ffffff */
-  --primary: oklch(0.55 0.22 25); /* #dc2626 - red primary */
-  --primary-foreground: oklch(1 0 0); /* #ffffff */
+  --primary: oklch(0.7 0.02 240); /* #a8a8a8 - silver/grey primary instead of red */
+  --primary-foreground: oklch(0.1 0 0); /* #1a1a1a - dark text on silver */
   --secondary: oklch(0.15 0 0); /* #262626 - dark secondary */
   --secondary-foreground: oklch(1 0 0); /* #ffffff */
   --muted: oklch(0.2 0 0); /* #333333 - muted dark */
   --muted-foreground: oklch(0.7 0 0); /* #b3b3b3 - muted text */
   --accent: oklch(1 0 0); /* #ffffff - white accent */
   --accent-foreground: oklch(0.1 0 0); /* #1a1a1a - dark text on white */
-  --destructive: oklch(0.55 0.22 25); /* #dc2626 - red for destructive */
+  --destructive: oklch(0.55 0.22 25); /* #dc2626 - keep red for destructive */
   --destructive-foreground: oklch(1 0 0); /* #ffffff */
   --border: oklch(0.3 0 0); /* #4d4d4d - border */
   --input: oklch(0.15 0 0); /* #262626 - input background */
-  --ring: oklch(0.55 0.22 25 / 0.5); /* red ring with opacity */
-  --chart-1: oklch(0.55 0.22 25); /* #dc2626 */
+  --ring: oklch(0.7 0.02 240 / 0.5); /* silver ring with opacity */
+  --chart-1: oklch(0.7 0.02 240); /* #a8a8a8 - silver */
   --chart-2: oklch(1 0 0); /* #ffffff */
   --chart-3: oklch(0.15 0 0); /* #262626 */
   --chart-4: oklch(0.7 0 0); /* #b3b3b3 */
@@ -32,12 +32,12 @@
   --radius: 0.5rem;
   --sidebar: oklch(0.1 0 0); /* #1a1a1a */
   --sidebar-foreground: oklch(1 0 0); /* #ffffff */
-  --sidebar-primary: oklch(0.55 0.22 25); /* #dc2626 */
-  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff */
+  --sidebar-primary: oklch(0.7 0.02 240); /* #a8a8a8 - silver */
+  --sidebar-primary-foreground: oklch(0.1 0 0); /* #1a1a1a */
   --sidebar-accent: oklch(1 0 0); /* #ffffff */
   --sidebar-accent-foreground: oklch(0.1 0 0); /* #1a1a1a */
   --sidebar-border: oklch(0.3 0 0); /* #4d4d4d */
-  --sidebar-ring: oklch(0.55 0.22 25 / 0.3); /* red ring */
+  --sidebar-ring: oklch(0.7 0.02 240 / 0.3); /* silver ring */
   --font-manrope: "Manrope", sans-serif;
   --font-geist: "Geist", serif;
 }
@@ -49,8 +49,8 @@
   --card-foreground: oklch(1 0 0);
   --popover: oklch(0.05 0 0);
   --popover-foreground: oklch(1 0 0);
-  --primary: oklch(0.6 0.25 25);
-  --primary-foreground: oklch(1 0 0);
+  --primary: oklch(0.75 0.02 240); /* lighter silver for dark mode */
+  --primary-foreground: oklch(0.05 0 0);
   --secondary: oklch(0.1 0 0);
   --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.15 0 0);
@@ -61,20 +61,20 @@
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.2 0 0);
   --input: oklch(0.1 0 0);
-  --ring: oklch(0.6 0.25 25 / 0.5);
-  --chart-1: oklch(0.6 0.25 25);
+  --ring: oklch(0.75 0.02 240 / 0.5);
+  --chart-1: oklch(0.75 0.02 240);
   --chart-2: oklch(1 0 0);
   --chart-3: oklch(0.1 0 0);
   --chart-4: oklch(0.6 0 0);
   --chart-5: oklch(0.2 0 0);
   --sidebar: oklch(0.05 0 0);
   --sidebar-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.6 0.25 25);
-  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.75 0.02 240);
+  --sidebar-primary-foreground: oklch(0.05 0 0);
   --sidebar-accent: oklch(1 0 0);
   --sidebar-accent-foreground: oklch(0.05 0 0);
   --sidebar-border: oklch(0.2 0 0);
-  --sidebar-ring: oklch(0.6 0.25 25 / 0.3);
+  --sidebar-ring: oklch(0.75 0.02 240 / 0.3);
 }
 
 @theme inline {
@@ -158,10 +158,10 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+    box-shadow: 0 0 0 0 rgba(168, 168, 168, 0.4); /* Changed from red to silver */
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+    box-shadow: 0 0 0 10px rgba(168, 168, 168, 0);
   }
 }
 

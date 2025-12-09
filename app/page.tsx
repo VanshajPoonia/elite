@@ -2,6 +2,7 @@
 
 import React from "react"
 import Image from "next/image"
+import Link from "next/link"
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
@@ -114,8 +115,7 @@ export default function HomePage() {
   ]
 
   const locations = [
-    { city: "Arnold", state: "MO", phone: "314-599-7558", address: "1190 Missouri State Rd Arnold, MO 63010" },
-    { city: "Catawissa", state: "MO", phone: "314-599-7558", address: "1055 Strothmann Road Catawissa MO 63015" },
+    { city: "St. Louis", state: "MO", phone: "314-599-7558", address: "13295 Twin Lakes Dr, St. Louis, MO 63122" },
   ]
 
   return (
@@ -145,7 +145,9 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <img src="/images/elite-logo.png" alt="Elite Towing Logo" className="h-16 sm:h-20 lg:h-24 w-auto" />
+              <Link href="/" className="flex items-center space-x-2 group">
+                <img src="/images/elite-logo-new.png" alt="Elite Towing Logo" className="h-16 sm:h-20 lg:h-24 w-auto" />
+              </Link>
             </div>
 
             <nav className="hidden md:flex space-x-8">
@@ -222,21 +224,19 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section id="home" className="min-h-screen relative overflow-hidden">
+      <section id="home" className="h-auto relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-20 w-32 h-32 border-2 border-primary rotate-45 animate-spin-slow"></div>
           <div className="absolute bottom-40 right-32 w-24 h-24 border-2 border-primary rotate-12 animate-pulse"></div>
           <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary rounded-full animate-bounce"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen relative z-10">
-          <div className="bg-black flex items-center relative order-2 lg:order-1">
-            <div className="absolute right-0 top-0 h-full w-1 bg-gradient-to-b from-primary via-primary/50 to-primary animate-pulse"></div>
-
+        <div className="grid grid-cols-1 lg:grid-cols-5 h-auto relative z-10">
+          <div className="bg-black flex items-center relative order-2 lg:order-1 lg:col-span-3">
             <div className="px-4 sm:px-8 lg:px-12 py-8 sm:py-12 w-full">
               <div className={`${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-                <div className="mb-6 sm:mb-8">
-                  <div className="text-primary text-xs sm:text-sm font-bold tracking-widest mb-2 animate-fade-in">
+                <div className="mb-6 sm:mb-8 mt-4">
+                  <div className="text-primary text-xs sm:text-sm font-bold tracking-widest mb-1 animate-fade-in">
                     ⚡ EMERGENCY TOWING SERVICES
                   </div>
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-serif font-bold mb-4 sm:mb-6 leading-tight text-white min-h-[120px] sm:min-h-[160px] lg:min-h-[200px]">
@@ -252,7 +252,7 @@ export default function HomePage() {
                     <MapPin className="h-4 w-4 mr-2 text-primary" />
                     SERVICE LOCATIONS
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="grid grid-cols-1 gap-3 sm:gap-4">
                     {locations.map((location, index) => (
                       <div
                         key={index}
@@ -303,47 +303,34 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="relative order-1 lg:order-2 min-h-[50vh] lg:min-h-full">
-            <div className="w-full h-full flex items-center justify-center bg-black">
-              <Image
-                src="/images/image.jpeg"
-                alt="Welcome to Elite Towing - Professional towing services"
-                width={800}
-                height={800}
-                className="w-[80%] h-[80%] object-contain"
-                priority
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent pointer-events-none">
-              <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8">
-                <div className="bg-primary/90 backdrop-blur-sm p-3 sm:p-4 rounded-lg transform transition-all duration-500 hover:scale-105">
-                  <div className="flex items-center space-x-2 sm:space-x-3 text-white">
-                    {React.createElement(stats[currentStatIndex].icon, { className: "h-4 w-4 sm:h-6 sm:w-6" })}
-                    <div>
-                      <div className="text-lg sm:text-2xl font-bold">{stats[currentStatIndex].number}</div>
-                      <div className="text-xs sm:text-sm opacity-90">{stats[currentStatIndex].label}</div>
-                    </div>
-                  </div>
-                </div>
+            <div className="relative order-1 lg:order-2 lg:col-span-2 h-auto min-h-[60vh] lg:min-h-[700px] flex items-center justify-center">
+              <div className="absolute left-4 top-0 h-full w-1 bg-gradient-to-b from-primary via-primary/50 to-primary animate-pulse"></div>
+              <div className="w-full h-full flex items-center justify-center bg-black pl-2">
+                <Image
+                  src="/images/welcome-elite.jpeg"
+                  alt="Welcome to Elite Towing - Professional towing services"
+                  width={1200}
+                  height={1600}
+                  className="w-full h-auto max-h-[95vh] lg:max-h-[900px] object-contain"
+                  priority
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-20 bg-background">
+      <section id="locations" className="py-12 sm:py-16 lg:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">Service Locations</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">Service Location</h2>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
-              We proudly serve Arnold, Catawissa, and surrounding areas in Missouri with 24/7 towing and roadside
-              assistance.
+              We proudly serve St. Louis and surrounding areas in Missouri with 24/7 towing and roadside assistance.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 max-w-2xl mx-auto">
             {locations.map((location, index) => (
               <div
                 key={index}
@@ -371,37 +358,6 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto mt-8">
-            <div className="bg-card border border-border rounded-lg overflow-hidden">
-              <div className="p-4 bg-primary/5 border-b border-border">
-                <h4 className="font-bold text-foreground">Arnold Location</h4>
-              </div>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.8!2d-90.3763!3d38.4358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8ca7d6e8b8b8b%3A0x8b8b8b8b8b8b8b8b!2s1190%20Missouri%20State%20Rd%2C%20Arnold%2C%20MO%2063010!5e0!3m2!1sen!2sus!4v1234567890"
-                width="100%"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-            <div className="bg-card border border-border rounded-lg overflow-hidden">
-              <div className="p-4 bg-primary/5 border-b border-border">
-                <h4 className="font-bold text-foreground">Catawissa Location</h4>
-              </div>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3116.2!2d-90.4821!3d38.3847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8d1e8b8b8b8b8%3A0x8b8b8b8b8b8b8b8b!2s1055%20Strothmann%20Rd%2C%20Catawissa%2C%20MO%2063015!5e0!3m2!1sen!2sus!4v1234567890"
-                width="100%"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -644,7 +600,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
             <div className="bg-card border-2 border-primary p-6 sm:p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
               <div className="bg-primary/10 p-4 rounded-full inline-block mb-4">
                 <Phone className="h-8 w-8 text-primary" />
@@ -668,88 +624,8 @@ export default function HomePage() {
                 <MapPin className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Serving</h3>
-              <p className="text-lg font-bold text-primary mb-2">Arnold & Catawissa, MO</p>
+              <p className="text-lg font-bold text-primary mb-2">St. Louis, MO</p>
               <p className="text-sm text-muted-foreground">And surrounding areas</p>
-            </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-card border border-border p-6 sm:p-8 rounded-lg">
-              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6">Request Service</h3>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="Your name"
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    placeholder="(555) 123-4567"
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
-                    Service Needed
-                  </label>
-                  <select
-                    id="service"
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                  >
-                    <option>Select a service</option>
-                    <option>Light-Duty Towing</option>
-                    <option>Medium-Duty Towing</option>
-                    <option>Roadside Assistance</option>
-                    <option>Flatbed Towing</option>
-                    <option>High End Vehicle Transport</option>
-                    <option>Equipment and Materials Hauling</option>
-                    <option>Motorcycle Towing</option>
-                    <option>Long Distance Towing</option>
-                    <option>Accident Recovery</option>
-                    <option>Winch Outs</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    placeholder="Tell us about your towing needs..."
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                  ></textarea>
-                </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                >
-                  Submit Request
-                </Button>
-              </form>
             </div>
           </div>
         </div>
@@ -758,10 +634,14 @@ export default function HomePage() {
       <section className="py-12 sm:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Find Us</h3>
+              <p className="text-sm text-muted-foreground">13295 Twin Lakes Dr, St. Louis, MO 63122</p>
+            </div>
             <div className="mb-8 sm:mb-12">
               <div className="rounded-lg overflow-hidden shadow-lg border-4 border-primary">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50043.45!2d-90.3763!3d38.4358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDI2JzA5LjAiTiA5MMKwMjInMzQuNyJX!5e0!3m2!1sen!2sus!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.2!2d-90.3853!3d38.5389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8cc8c8b1b7777%3A0x0!2s13295%20Twin%20Lakes%20Dr%2C%20St.%20Louis%2C%20MO%2063122!5e0!3m2!1sen!2sus!4v1234567890"
                   width="100%"
                   height="450"
                   style={{ border: 0 }}
@@ -781,7 +661,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <div className="mb-4">
-                <img src="/images/elite-logo.png" alt="Elite Towing Logo" className="h-16 w-auto brightness-0 invert" />
+                <img src="/images/elite-logo-new.png" alt="Elite Towing Logo" className="h-22 w-auto" />
               </div>
               <p className="text-white/70 text-sm">Professional towing and roadside assistance available 24/7.</p>
             </div>
@@ -825,7 +705,7 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-center space-x-2 text-white/70">
                   <MapPin className="h-4 w-4" />
-                  <span>Arnold & Catawissa, MO</span>
+                  <span>St. Louis, MO</span>
                 </li>
               </ul>
             </div>
@@ -845,7 +725,7 @@ export default function HomePage() {
                 </a>
                 <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-primary transition-colors">
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.072 4.947c-.06 1.277-.256 2.149-.558 2.913-.306.789-.718 1.459-1.384 2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
                   </svg>
                 </a>
               </div>
