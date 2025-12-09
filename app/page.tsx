@@ -386,9 +386,8 @@ export default function HomePage() {
             {/* Vertical bar at the left edge of image container */}
             <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary via-primary/50 to-primary animate-pulse z-10"></div>
 
-            {/* Image fills entire container */}
             <Image
-              src="/images/welcome-elite.jpeg"
+              src="/images/welcome-elite-new.jpg"
               alt="Welcome to Elite Towing - Professional towing services"
               width={1200}
               height={1600}
