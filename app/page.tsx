@@ -231,9 +231,9 @@ export default function HomePage() {
           <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary rounded-full animate-bounce"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 h-auto relative z-10">
-          {/* Text section - 60% width (3 columns) */}
-          <div className="bg-black flex items-start relative order-2 lg:order-1 lg:col-span-3 px-4 sm:px-8 lg:px-12 py-6 lg:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 h-auto relative z-10">
+          {/* Text section - 50% width */}
+          <div className="bg-black flex items-start relative order-2 lg:order-1 px-4 sm:px-8 lg:px-12 py-6 lg:py-8">
             <div className="w-full">
               <div className={`${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
                 <div className="mb-6 sm:mb-8">
@@ -301,12 +301,88 @@ export default function HomePage() {
                       <span>Licensed & Insured</span>
                     </div>
                   </div>
+
+                  <div
+                    className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 animate-fade-in-up"
+                    style={{ animationDelay: "1.2s" }}
+                  >
+                    <h3 className="text-white text-sm sm:text-base font-bold mb-4">QUICK SERVICES</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="flex items-start space-x-2">
+                        <div className="bg-primary/20 p-2 rounded">
+                          <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M13 10V3L4 14h7v7l9-11h-7z"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <div className="text-white text-sm sm:text-base font-semibold">Emergency Towing</div>
+                          <div className="text-white/60 text-sm">Fast response times</div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-2">
+                        <div className="bg-primary/20 p-2 rounded">
+                          <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <div className="text-white text-sm sm:text-base font-semibold">Roadside Assistance</div>
+                          <div className="text-white/60 text-sm">Jump starts & tire changes</div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-2">
+                        <div className="bg-primary/20 p-2 rounded">
+                          <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <div className="text-white text-sm sm:text-base font-semibold">Lockout Service</div>
+                          <div className="text-white/60 text-sm">Quick vehicle access</div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-2">
+                        <div className="bg-primary/20 p-2 rounded">
+                          <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <div className="text-white text-sm sm:text-base font-semibold">Accident Recovery</div>
+                          <div className="text-white/60 text-sm">Safe vehicle transport</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="relative order-1 lg:order-2 lg:col-span-2 min-h-[60vh] lg:min-h-[700px] bg-black">
+          <div className="relative order-1 lg:order-2 min-h-[60vh] lg:min-h-[700px] bg-black">
             {/* Vertical bar at the left edge of image container */}
             <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary via-primary/50 to-primary animate-pulse z-10"></div>
 
