@@ -233,7 +233,7 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 h-auto relative z-10">
           {/* Text section - 60% width (3 columns) */}
-          <div className="bg-black flex items-start relative order-2 lg:order-1 lg:col-span-3 px-4 sm:px-8 lg:px-12 py-4 lg:py-6">
+          <div className="bg-black flex items-start relative order-2 lg:order-1 lg:col-span-3 px-4 sm:px-8 lg:px-12 py-6 lg:py-8">
             <div className="w-full">
               <div className={`${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
                 <div className="mb-6 sm:mb-8">
@@ -743,6 +743,19 @@ export default function HomePage() {
               <a href="#" className="hover:text-primary transition-colors">
                 Terms of Service
               </a>
+            </div>
+            <div className="mt-4">
+              <p className="text-white/50 text-xs">
+                Made by{" "}
+                <a
+                  href="https://kreativvantage.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors font-medium"
+                >
+                  KreativVantage
+                </a>
+              </p>
             </div>
           </div>
         </div>
