@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-import Image from "next/image"
 import Link from "next/link"
 
 import { useState, useEffect } from "react"
@@ -386,13 +385,10 @@ export default function HomePage() {
             {/* Vertical bar at the left edge of image container */}
             <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary via-primary/50 to-primary animate-pulse z-10"></div>
 
-            <Image
+            <img
               src="/images/welcome-elite-new.jpg"
-              alt="Welcome to Elite Towing - Professional towing services"
-              width={1200}
-              height={1600}
+              alt="Welcome to Elite Towing"
               className="w-full h-full object-cover"
-              priority
             />
           </div>
         </div>
@@ -659,10 +655,13 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative order-1 lg:order-2 min-h-[50vh] lg:min-h-full">
-            <img
-              src="/images/image.jpeg"
-              alt="Elite Towing professional service"
+            <video
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/B08085F8-0DAE-4B77-BA59-3733A18BDBDD-W54Twy81hKg0gupv960VAXJgi4QHzL.mov"
               className="w-full h-full object-cover"
+              muted
+              loop
+              playsInline
+              autoPlay
             />
           </div>
         </div>
