@@ -130,7 +130,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center space-x-2 text-foreground">
                   <Mail className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
-                  <span>info@elitetowing.com</span>
+                  <span>info@elitetowingrecoveries.com</span>
                 </div>
               </div>
               <div className="flex items-center space-x-2 text-primary font-semibold">
@@ -691,7 +691,7 @@ export default function HomePage() {
                 <Mail className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Email Us</h3>
-              <p className="text-lg font-bold text-primary mb-2">info@elitetowing.com</p>
+              <p className="text-lg font-bold text-primary mb-2">info@elitetowingrecoveries.com</p>
               <p className="text-sm text-muted-foreground">We'll respond promptly</p>
             </div>
 
@@ -777,7 +777,7 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-center space-x-2 text-white/70">
                   <Mail className="h-4 w-4" />
-                  <span>info@elitetowing.com</span>
+                  <span>info@elitetowingrecoveries.com</span>
                 </li>
                 <li className="flex items-center space-x-2 text-white/70">
                   <MapPin className="h-4 w-4" />
