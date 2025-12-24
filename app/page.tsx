@@ -691,7 +691,7 @@ export default function HomePage() {
                 <Mail className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Email Us</h3>
-              <p className="text-lg font-bold text-primary mb-2">info@elitetowingrecoveries.com</p>
+              <p className="text-lg font-bold text-primary mb-2 mx-auto break-words">info@elitetowingrecoveries.com</p>
               <p className="text-sm text-muted-foreground">We'll respond promptly</p>
             </div>
 
